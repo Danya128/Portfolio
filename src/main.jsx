@@ -2,12 +2,14 @@ import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
+const assetUrl = path => `${import.meta.env.BASE_URL}${path}`;
+
 const projects = [
   {
     number: '01',
     title: 'PaperForge',
     type: 'AI writing assistant',
-    image: '/images/paperForge.png',
+    image: assetUrl('images/paperForge.png'),
     description: 'An academic writing assistant that turns uploaded sources into structured, referenced assignments instead of unsupported text.',
     stack: ['Python', 'RAG', 'LangChain', 'ChromaDB', 'Streamlit'],
     details: ['Accepts one or multiple documents', 'Retrieves relevant source passages', 'Supports multiple referencing styles'],
@@ -17,7 +19,7 @@ const projects = [
     number: '02',
     title: 'GazeFix',
     type: 'Computer vision prototype',
-    image: '/images/gazeFix.png',
+    image: assetUrl('images/gazeFix.png'),
     description: 'A real-time gaze correction prototype that combines landmark detection, head-pose estimation, regression, and local eye-region warping.',
     stack: ['Python', 'MediaPipe', 'OpenCV', 'NumPy', 'scikit-learn'],
     details: ['Calibrates target iris positions', 'Predicts gaze from head pose', 'Compares original and corrected frames'],
@@ -69,7 +71,7 @@ function ProjectList() {
 }
 
 function CertificateGallery({ onOpen }) {
-  return <div className="certificate-gallery">{certificates.map(certificate => <button className="certificate-card reveal" type="button" onClick={() => onOpen(certificate)} key={certificate.file}><img src={`/Certs/previews/${encodeURIComponent(certificate.preview)}`} alt={`${certificate.title} preview`} /><span className="certificate-meta"><span className="certificate-title">{certificate.title}</span><span className="certificate-issuer">{certificate.issuer}</span><span className="certificate-open">View certificate <Arrow /></span></span></button>)}</div>;
+  return <div className="certificate-gallery">{certificates.map(certificate => <button className="certificate-card reveal" type="button" onClick={() => onOpen(certificate)} key={certificate.file}><img src={assetUrl(`Certs/previews/${encodeURIComponent(certificate.preview)}`)} alt={`${certificate.title} preview`} /><span className="certificate-meta"><span className="certificate-title">{certificate.title}</span><span className="certificate-issuer">{certificate.issuer}</span><span className="certificate-open">View certificate <Arrow /></span></span></button>)}</div>;
 }
 
 function ContactVisual() {
@@ -102,7 +104,7 @@ function App() {
       <section className="contact section-shell" id="contact"><div className="contact-inner"><div><p className="section-label">04 / Contact</p><h2>Let’s build<br /><em>something useful</em></h2><p className="contact-copy">I’m open to internship opportunities, project conversations, and practical technical challenges</p><div className="contact-actions"><a className="button button-primary" href="mailto:oleynukd@gmail.com">oleynukd@gmail.com <Arrow /></a><a className="button button-quiet" href="https://www.linkedin.com/in/daniil-oliinyk-362b0938a/" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a><a className="button button-quiet" href="https://github.com/Danya128" target="_blank" rel="noreferrer">GitHub <Arrow /></a></div></div><ContactVisual /></div></section>
     </main>
     <footer className="site-footer section-shell"><span>© {new Date().getFullYear()} Daniil Oliinyk</span><span>Data Science & AI / TU Dublin</span><a href="#top">Back to top ↑</a></footer>
-    {selectedCertificate && <div className="modal-backdrop" role="presentation" onClick={() => setSelectedCertificate(null)}><div className="certificate-modal" role="dialog" aria-modal="true" aria-label={selectedCertificate.title} onClick={event => event.stopPropagation()}><button className="modal-close" type="button" onClick={() => setSelectedCertificate(null)} aria-label="Close certificate">×</button><img src={`/Certs/previews/${encodeURIComponent(selectedCertificate.preview)}`} alt="" /><p className="section-label">{selectedCertificate.issuer}</p><h2>{selectedCertificate.title}</h2><a className="button button-primary" href={`/Certs/${encodeURIComponent(selectedCertificate.file)}`} target="_blank" rel="noreferrer">Open original PDF <Arrow /></a></div></div>}
+    {selectedCertificate && <div className="modal-backdrop" role="presentation" onClick={() => setSelectedCertificate(null)}><div className="certificate-modal" role="dialog" aria-modal="true" aria-label={selectedCertificate.title} onClick={event => event.stopPropagation()}><button className="modal-close" type="button" onClick={() => setSelectedCertificate(null)} aria-label="Close certificate">×</button><img src={assetUrl(`Certs/previews/${encodeURIComponent(selectedCertificate.preview)}`)} alt="" /><p className="section-label">{selectedCertificate.issuer}</p><h2>{selectedCertificate.title}</h2><a className="button button-primary" href={assetUrl(`Certs/${encodeURIComponent(selectedCertificate.file)}`)} target="_blank" rel="noreferrer">Open original PDF <Arrow /></a></div></div>}
   </>;
 }
 
