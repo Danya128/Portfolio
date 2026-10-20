@@ -24,17 +24,28 @@ const projects = [
     stack: ['Python', 'MediaPipe', 'OpenCV', 'NumPy', 'scikit-learn'],
     details: ['Calibrates target iris positions', 'Predicts gaze from head pose', 'Compares original and corrected frames'],
     href: 'https://github.com/Danya128/GazeFix'
+  },
+  {
+    number: '03',
+    title: 'ProcurePilot',
+    type: 'AI procurement agent',
+    image: assetUrl('images/ProcurePilot.png'),
+    description: 'An AI procurement agent that analyses supplier quotations, checks budgets and company policies, compares suppliers, and keeps a human approval step before creating a purchase request.',
+    stack: ['Python', 'LangChain', 'OpenAI', 'ChromaDB', 'Streamlit'],
+    details: ['Extracts data from quotation PDFs', 'Checks budgets and company policy', 'Supports manager approval'],
+    href: 'https://github.com/Danya128/ProcurePilot'
   }
 ];
 
 const certificates = [
   { title: 'Data Analytics Essentials', issuer: 'Cisco Networking Academy', file: 'DataAnalyticsEssentialsUpdate20260518-31-x4u0ss copy.pdf', preview: 'DataAnalyticsEssentialsUpdate20260518-31-x4u0ss copy.pdf.png' },
   { title: 'NVIDIA Learning Certificate', issuer: 'NVIDIA', file: 'My Learning _ NVIDIA copy.pdf', preview: 'My Learning _ NVIDIA copy.pdf.png' },
-  { title: 'Udemy', issuer: 'Udemy', file: 'UC-4921b3be-d863-49fb-9832-d74baa1ae414 copy.pdf', preview: 'UC-4921b3be-d863-49fb-9832-d74baa1ae414 copy.pdf.png' },
-  { title: 'Udemy', issuer: 'Udemy', file: 'UC-87a4928e-7865-4c5e-bd31-50e8de672953 copy.pdf', preview: 'UC-87a4928e-7865-4c5e-bd31-50e8de672953 copy.pdf.png' },
-  { title: 'Udemy', issuer: 'Udemy', file: 'UC-945a80a3-3101-4879-b764-e23e062e66f0 copy.pdf', preview: 'UC-945a80a3-3101-4879-b764-e23e062e66f0 copy.pdf.png' },
-  { title: 'Udemy', issuer: 'Udemy', file: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf', preview: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf.png' },
-  { title: 'Udemy', issuer: 'Udemy', file: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf', preview: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf.png' }
+  { title: 'Python for Computer Vision with OpenCV and Deep Learning', issuer: 'Udemy', file: 'UC-4921b3be-d863-49fb-9832-d74baa1ae414 copy.pdf', preview: 'UC-4921b3be-d863-49fb-9832-d74baa1ae414 copy.pdf.png' },
+  { title: 'Python Data Structures & Algorithms + LEETCODE Exercises', issuer: 'Udemy', file: 'UC-87a4928e-7865-4c5e-bd31-50e8de672953 copy.pdf', preview: 'UC-87a4928e-7865-4c5e-bd31-50e8de672953 copy.pdf.png' },
+  { title: 'AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents', issuer: 'Udemy', file: 'UC-945a80a3-3101-4879-b764-e23e062e66f0 copy.pdf', preview: 'UC-945a80a3-3101-4879-b764-e23e062e66f0 copy.pdf.png' },
+  { title: 'Веб разработка - с нуля до профессионала. Full Stack', issuer: 'Udemy', file: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf', preview: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf.png' },
+  { title: 'Python - Полный Курс по Python, Django, Data Science и ML', issuer: 'Udemy', file: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf', preview: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf.png' },
+  { title: 'AI Coder: Complete Claude Code & Coding Agents Course', issuer: 'Udemy', file: 'UC-e485294c-ed3e-46e3-8f9f-93b5174e58cf copy.pdf', preview: 'UC-e485294c-ed3e-46e3-8f9f-93b5174e58cf copy.pdf.png' }
 ];
 
 const skills = [
@@ -61,7 +72,7 @@ function Header() {
 function ProjectCard({ project }) {
   return <article className="project-card reveal">
     <a className="project-row" href={project.href} target="_blank" rel="noreferrer">
-      <span className="project-row-copy"><span className="project-row-title">{project.title}</span><span className="project-row-description">{project.description}</span><span className="stack">{project.stack.map(item => <span key={item}>{item}</span>)}</span></span><span className="project-row-type">{project.type}</span><span className="project-logo"><img src={project.image} alt={`${project.title} logo`} /></span><span className="project-arrow" aria-hidden="true">↗</span>
+      <span className="project-row-copy"><span className="project-row-title">{project.title}</span><span className="project-row-description">{project.description}</span><span className="stack">{project.stack.map(item => <span key={item}>{item}</span>)}</span></span><span className="project-row-type">{project.type}</span><span className="project-logo"><img src={project.image} alt={`${project.title} logo`} /></span>
     </a>
   </article>;
 }
