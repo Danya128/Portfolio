@@ -43,15 +43,15 @@ const certificates = [
   { title: 'Python for Computer Vision with OpenCV and Deep Learning', issuer: 'Udemy', file: 'UC-4921b3be-d863-49fb-9832-d74baa1ae414 copy.pdf', preview: 'UC-4921b3be-d863-49fb-9832-d74baa1ae414 copy.pdf.png' },
   { title: 'Python Data Structures & Algorithms + LEETCODE Exercises', issuer: 'Udemy', file: 'UC-87a4928e-7865-4c5e-bd31-50e8de672953 copy.pdf', preview: 'UC-87a4928e-7865-4c5e-bd31-50e8de672953 copy.pdf.png' },
   { title: 'AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents', issuer: 'Udemy', file: 'UC-945a80a3-3101-4879-b764-e23e062e66f0 copy.pdf', preview: 'UC-945a80a3-3101-4879-b764-e23e062e66f0 copy.pdf.png' },
-  { title: 'Веб разработка - с нуля до профессионала. Full Stack', issuer: 'Udemy', file: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf', preview: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf.png' },
-  { title: 'Python - Полный Курс по Python, Django, Data Science и ML', issuer: 'Udemy', file: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf', preview: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf.png' },
+  { title: 'Web development from zero to advance. Full Stack', issuer: 'Udemy', file: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf', preview: 'UC-9cb49da5-eac1-4fd5-a790-f7d35775e226 copy.pdf.png' },
+  { title: 'Python Full Course, Django, Data Science и ML', issuer: 'Udemy', file: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf', preview: 'UC-e26feaf7-9253-4759-ae05-1b5eb2c279c4 copy.pdf.png' },
   { title: 'AI Coder: Complete Claude Code & Coding Agents Course', issuer: 'Udemy', file: 'UC-e485294c-ed3e-46e3-8f9f-93b5174e58cf copy.pdf', preview: 'UC-e485294c-ed3e-46e3-8f9f-93b5174e58cf copy.pdf.png' }
 ];
 
 const skills = [
   ['Languages', 'Python', 'C', 'JavaScript', 'SQL'],
-  ['Web & systems', 'HTML', 'CSS', 'Docker'],
-  ['Data & AI', 'LangChain', 'OpenCV', 'NumPy', 'pandas']
+  ['Web & systems', 'HTML', 'CSS', 'PHP'],
+  ['Data & AI', 'LangChain', 'OpenCV', 'NumPy', 'Pandas']
 ];
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
